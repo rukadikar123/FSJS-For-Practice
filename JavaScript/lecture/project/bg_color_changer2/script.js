@@ -18,7 +18,7 @@ const StartChangingColor=function(){
     function changebgColor(){
         document.body.style.backgroundColor=randomColor()
     }
-}
+} 
 const StopChangingColor=function(){
     clearInterval(intervalID)
     intervalID=null
