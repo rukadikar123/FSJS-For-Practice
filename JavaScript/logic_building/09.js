@@ -26,12 +26,12 @@
 
 
 
-let arr=[5,8,43,89,98]
+// let arr=[5,8,43,89,98]
 
-let newArr=arr.reduce((acc,curr)=> {
-   return Math.min(acc,curr)
-} )
-console.log(newArr);
+// let newArr=arr.reduce((acc,curr)=> {
+//    return Math.min(acc,curr)
+// } )
+// console.log(newArr);
 
  
 // let array=[1,8,3,9,4,7,4,3]
@@ -40,3 +40,27 @@ console.log(newArr);
 
 // console.log(newArray);
 
+
+// let arr=[
+//    {
+//       name:"siddharth",
+//       age:22
+//    },
+//    {
+//       name:"rahul",
+//       age:69
+//    },
+//    {
+//       name:"sachin",
+//       age:35
+//    }
+// ]
+
+// newarr=arr.map((val)=> val.age)
+// console.log(newarr);
+
+// const newarr=[...arr].sort((a,b)=> a.age-b.age)
+
+
+// console.log(newarr);
+// console.log(arr);
