@@ -64,3 +64,117 @@
 
 // console.log(newarr);
 // console.log(arr);
+
+// if(""){
+//    console.log("hey");
+   
+// }else{
+//    console.log("hello");
+   
+// }
+
+// var obj={
+//    name:"siddharth",
+//    age:25,
+//    city:"rukadi"
+// }
+
+// for (var key in obj){
+//    console.log(`${key} : ${obj[key]}`);
+   
+// }
+
+// function abcd(a){
+//    a()
+// }
+// abcd(function(){
+//    console.log("hello");
+   
+// })
+// var a=[1,2,3,4,5]
+
+// console.log(typeof([]));
+
+// var arr=[1,2,3,4,5]
+// arr[-2]=2
+// arr[-1]=5
+
+// console.log(arr);
+
+
+// console.log("hello");
+
+// setTimeout(function(){
+//    console.log("hey");
+   
+   
+// },2000)
+
+// console.log("world");
+// setTimeout(function(){
+//    console.log("guys");
+   
+   
+// },1000)
+
+// var ans=new Promise((res, rej)=>{
+//       if(false){
+//          return res();
+//       }else{
+//          return rej();
+//       }
+// })
+// ans.then(()=>{
+//    console.log("resolve");
+   
+// }).catch(()=>{
+//    console.log("reject");
+   
+// })
+
+// async function abcd(){
+//  let raw=await fetch('https://randomuser.me/api/')
+// let ans=await raw.json()
+// console.log(ans);
+
+// }
+// abcd()
+
+// function abcd(name){
+//    this.age=23;
+//    this.name=name;
+// }
+
+// let func1=new abcd("siddharth")
+// let func2=new abcd("rahul")
+
+// console.log(func1);
+// console.log(func2);
+
+
+// var ans=function abcd(){
+//    var a=12;
+//    return {
+//       getter: function(){
+//          console.log(a);
+         
+//       },
+//       setter:function(val){
+//          a=val;
+//       }
+
+//    }
+// }()
+
+
+function abcd(){
+   console.log(this);
+   
+}
+var obj={
+   age:22
+}
+
+var bindedFunc=abcd.bind(obj)
+
+bindedFunc()
