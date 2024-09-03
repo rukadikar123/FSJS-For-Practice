@@ -167,14 +167,31 @@
 // }()
 
 
-function abcd(){
-   console.log(this);
+// function abcd(){
+//    console.log(this);
    
-}
-var obj={
-   age:22
-}
+// }
+// var obj={
+//    age:22
+// }
 
-var bindedFunc=abcd.bind(obj)
+// var bindedFunc=abcd.bind(obj)
 
-bindedFunc()
+// bindedFunc()
+
+// function abc(a,b,c,...d){
+//    console.log(a,b,c,d);
+   
+// }
+// abc(1,2,3,4,5,7,8,9)
+
+// destructuring
+// var a=[1,2,34,21]
+
+// var [b,c]=a
+
+// console.log(a);
+
+var obj={name:"siddharth", age:23}
+var {age}=obj
+console.log(age);
