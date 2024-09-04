@@ -167,17 +167,17 @@
 // }()
 
 
-function abcd(){
-   console.log(this);
+// function abcd(){
+//    console.log(this);
    
-}
-var obj={
-   age:22
-}
+// }
+// var obj={
+//    age:22
+// }
 
-var bindedFunc=abcd.bind(obj)
+// var bindedFunc=abcd.bind(obj)
 
-bindedFunc()
+// bindedFunc()
 
 // function abc(a,b,c,...d){
 //    console.log(a,b,c,d);
@@ -195,3 +195,15 @@ bindedFunc()
 // var obj={name:"siddharth", age:23}
 // var {age}=obj
 // console.log(age);
+
+
+function abcd(){
+   var x=19
+   return function(){
+      console.log(x);
+      
+   } 
+}
+
+let ans= abcd()
+ans()

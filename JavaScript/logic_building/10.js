@@ -39,16 +39,16 @@
 
 
 
-const names = ["John Doe", "Jane Smith", "Bob Johnson"];
+// const names = ["John Doe", "Jane Smith", "Bob Johnson"];
 
-function getInitials(names){
-  return  names.map((val)=>{
-    let splitted=val.split(" ")
-    let letter_1=[...splitted[0]]
-    let letter_2=[...splitted[1]]
-    let joined= [letter_1[0], "." ,letter_2[0],"." ].join("")
-    return joined
-    })
-}
+// function getInitials(names){
+//   return  names.map((val)=>{
+//     let splitted=val.split(" ")
+//     let letter_1=[...splitted[0]]
+//     let letter_2=[...splitted[1]]
+//     let joined= [letter_1[0], "." ,letter_2[0],"." ].join("")
+//     return joined
+//     })
+// }
 
-console.log(getInitials(names));
+// console.log(getInitials(names));
