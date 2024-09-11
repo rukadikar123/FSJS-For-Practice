@@ -25,8 +25,8 @@ const toggleFreze = (index) => {
     <div className="container ">
     <div className="numbers bg-gray-200 h-[70vh]  flex-wrap flex items-center justify-center  gap-10 text-7xl w-[40vw] my-10 p-4 ml-[440px]">
     
-      { (new Set(dice).size===1) ? <p className='text-center p-[30px] text-4xl'>You won</p> :  dice.map((elem , index)=>(
-        <div onClick={()=> toggleFreze(index)} className='border-[1px] p-4 cursor-pointer border-black' key={index}>{elem}</div>
+      { (new Set(dice).size===1) ? <p className='text-center p-[30px] text-6xl text-blue-900'>You won</p> :  dice.map((elem , index)=>(
+        <div  onClick={()=> toggleFreze(index)} className={`border-[1px] p-4 cursor-pointer border-black ${freeze[index] ? "bg-blue-300": ""}`} key={index}>{elem}</div>
       )) }
      
     
