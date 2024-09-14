@@ -52,6 +52,7 @@ function App() {
               </div>
             ))}
           </div>
+          <button onClick={()=>setTodos([])} className="block  mx-auto my-8 bg-zinc-600 px-4 py-2 rounded-lg">Remove all</button>
         </div>
       </div>
     </TodoProvider>
