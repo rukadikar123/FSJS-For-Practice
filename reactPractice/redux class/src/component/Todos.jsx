@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { addTodo, removeTodo, removeAll } from '../features/TodoSlice'
 
@@ -27,7 +27,8 @@ function Todos() {
         {
             todos.map((todo)=>(
                 <div key={todo.id} className='flex gap-28 text-black text-xl items-center justify-center mt-10'>
-                <h1 key={todo.id}> {todo.text}</h1>
+                <input type="text" value={todo.text}  className='outline-none bg-transparent'
+                />
                 <button onClick={()=> dispatch(removeTodo(todo.id))}>❌</button>
                 </div>
             ))
