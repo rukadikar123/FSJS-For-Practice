@@ -1,19 +1,22 @@
 import React, { useState } from 'react'
-import { useTodo } from '../Context/Context'
+import { useTodo } from '../Context/TodoContext'
 
 function TodoItem({todo}) {
+
+    const {updateTodo,deleteTodo,toggleComplete}=useTodo()
+
     const [isTodoEditable,setIsTodoEditable]=useState(false)
     const [todoMsg,setTodoMsg]=useState(todo.todo)
 
     const editTodo=()=>{
-        UpdateTodo(todo.id,{...todo, todo:todoMsg})
+        updateTodo(todo.id,{...todo, todo:todoMsg})
         setIsTodoEditable(false)
     }
+
     const toggleCompleted=()=>{
         toggleComplete(todo.id)
     }
 
-    const {UpdateTodo, deletetodo, toggleComplete}=useTodo()
   return (
     <>
     <div
@@ -33,28 +36,25 @@ function TodoItem({todo}) {
                 value={todoMsg}
                 onChange={(e)=> setTodoMsg(e.target.value)}
                 readOnly={!isTodoEditable}
+               
             />
             {/* Edit, Save Button */}   
             <button
                 className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0 disabled:opacity-50"
-                onClick={()=>{
-                    if(todo.completed) return
+                 onClick={()=>{
+                    if (todo.completed) return
 
                     if(isTodoEditable){
-                        editTodo()
-
-                    }else{
-                        setIsTodoEditable((prev)=> !prev)
-                    }
-                }}
+                        editTodo();
+                    }else setIsTodoEditable((prev)=>!prev)
+                 }}   
                 disabled={todo.completed}
-            >
-                {isTodoEditable ? "📁" : "✏️"}
+                >{isTodoEditable ? "📁" : "✏️"}
             </button>
             {/* Delete Todo Button */}
             <button
                 className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0"
-                onClick={()=> deletetodo(todo.id)}
+                 onClick={()=>deleteTodo(todo.id)}
             >
                 ❌
             </button>
