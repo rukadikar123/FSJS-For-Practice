@@ -26,6 +26,7 @@ function App() {
 
     if (admin && admin.email === email && admin.password === password) {
       setUser("admin");
+      setLoggedInUser(admin)
       localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
     } else if (employee && employee.email === email && password === employee.password) {
       setUser("employee");
@@ -44,9 +45,9 @@ function App() {
   
       {!user && <Login handleClick={handleClick} />}
       {user === "admin" ? (
-        <Admin  data={loggedInUser? loggedInUser : {}} />
+        <Admin changeUser={setUser}  data={loggedInUser? loggedInUser : {}} />
       ) : (
-        (user==="employee" ? <Employee  data={loggedInUser? loggedInUser : {}} />: "")
+        (user==="employee" ? <Employee changeUser={setUser}  data={loggedInUser? loggedInUser : {}} />: "")
       )}
     </>
   );

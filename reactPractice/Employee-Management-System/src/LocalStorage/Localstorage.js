@@ -1,5 +1,6 @@
 const admin = {
   id: 1,
+  name: "Karan Sharma",
   email: "admin@example.com",
   password: "123",
 };

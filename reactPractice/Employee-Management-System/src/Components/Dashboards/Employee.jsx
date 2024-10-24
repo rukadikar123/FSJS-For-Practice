@@ -3,13 +3,15 @@ import Header from "../others/Header";
 import TaskListNumber from "../others/TaskListNumber";
 import TaskList from "../others/TaskList";
 
-function Employee({data}) {
+function Employee({data, changeUser}) {
   
   return (
     <>
-      <Header data={data}/>
+      <div className="bg-black">
+      <Header changeUser={changeUser} data={data}/>
       <TaskListNumber data={data}/>
       <TaskList data={data}/>
+      </div>
     </>
   );
 }

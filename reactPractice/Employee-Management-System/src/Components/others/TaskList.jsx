@@ -1,11 +1,10 @@
-import React, { useContext } from "react";
+import  { useContext  } from "react";
 import NewTask from "../TaskList/NewTask";
 import CompletedTast from "../TaskList/CompletedTast";
 import AcceptTask from "../TaskList/AcceptTask";
 import FailedTask from "../TaskList/FailedTask";
 
 function TaskList({data}) {
-console.log(data);
 
   
   return (
