@@ -26,18 +26,19 @@ function Admin({ data, changeUser }) {
     };
 
     // setNewTask({title,date,category,description,active:true, completed:false,failed:false,newTask:true})
-    const employeeData = JSON.parse(localStorage.getItem("employees"));
+    const employeeData = JSON.parse(localStorage.getItem("employees") || []);
 
-    employeeData?.forEach((elem) => {
+   const updatedData =employeeData?.map((elem) => {
       if (assign === elem.name) {
         elem.tasks = elem.tasks || []; // ensure tasks array exists
         elem.tasks.push(NewTask);
         elem.taskCount = elem.taskCount || { newTasks: 0 }; // ensure taskCount object exists
         elem.taskCount.newTasks = elem.taskCount.newTasks + 1;
       }
+      return elem
     });
 
-    localStorage.setItem("employees", JSON.stringify(employeeData));
+    localStorage.setItem("employees", JSON.stringify(updatedData));
 
     setTitle("");
     setDate("");

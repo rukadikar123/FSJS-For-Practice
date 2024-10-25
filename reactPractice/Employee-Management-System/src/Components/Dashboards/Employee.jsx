@@ -4,6 +4,8 @@ import TaskListNumber from "../others/TaskListNumber";
 import TaskList from "../others/TaskList";
 
 function Employee({data, changeUser}) {
+  console.log(data);
+  
   
   return (
     <>

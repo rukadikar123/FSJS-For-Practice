@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../../Context/AuthProvider";
+
 
 function NewTask({ data }) {
 

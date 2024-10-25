@@ -1,7 +1,6 @@
 import React from "react";
 
 function TaskListNumber({data}) {
-  console.log(data);
   
   return (
     <>
