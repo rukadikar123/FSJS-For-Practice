@@ -8,17 +8,21 @@ function App() {
   const { admin, employees } = useContext(AuthContext);
 
   const [user, setUser] = useState(null);
-  const [loggedInUser, setLoggedInUser] = useState("");
+  const [loggedInUser, setLoggedInUser] = useState(null);
 
   useEffect(() => {
     const loggedInData = localStorage.getItem("loggedInUser");
 
     if (loggedInData) {
       const userData = JSON.parse(loggedInData);
+      console.log(userData);
+      
       setUser(userData.role);
+      setLoggedInUser(userData.data)
+      
       
     }
-  }, [admin, employees]);
+  }, [admin, employees, setUser]);
 
   const handleClick = (email, password) => {
     const employee = employees.find((elem) => elem.email === email && elem.password === password
@@ -27,13 +31,13 @@ function App() {
     if (admin && admin.email === email && admin.password === password) {
       setUser("admin");
       setLoggedInUser(admin)
-      localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
+      localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin",data:admin }));
     } else if (employee && employee.email === email && password === employee.password) {
       setUser("employee");
       setLoggedInUser(employee);
       localStorage.setItem(
         "loggedInUser",
-        JSON.stringify({ role: "employee" })
+        JSON.stringify({ role: "employee",data:employee })
       );
     } else {
       alert("Invalid Credentials")
