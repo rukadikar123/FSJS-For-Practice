@@ -10,7 +10,7 @@ import { FaYoutube } from "react-icons/fa";
 function Navbar() {
   return (
     <>
-      <div className="flex justify-between items-center h-10 px-4 mt-6">
+      <div className="flex justify-between items-center   h-10 px-4 mt-6">
         <div className="flex items-center gap-6">
           <div>
             <IoIosMenu className="text-[#6c6b6b]" size={40}/>
