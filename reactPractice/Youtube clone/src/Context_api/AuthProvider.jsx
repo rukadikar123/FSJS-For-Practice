@@ -12,6 +12,7 @@ function AuthProvider({children}) {
     useEffect(() => {
         fetchAllData(value)
         
+        
     }, [value])
     
     const fetchAllData=(query)=>{
@@ -19,7 +20,6 @@ function AuthProvider({children}) {
         fetchData(`search/?q=${query}`).then(({contents})=>{
             setData(contents)
           
-            console.log(contents);
             
             setLoading(false)
         })

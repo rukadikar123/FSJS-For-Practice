@@ -21,25 +21,25 @@ function Navbar() {
           </div>
         </div>
         <div className="flex items-center gap-3"> 
-          <div className="flex items-center gap-3">
-            <input type="text" placeholder="Search " className="border rounded-l-full border-gray-400 outline-none px-4 py-2 w-[30vw]"/>
-            <div>
-              <CiSearch size={30}/>
+          <div className="flex items-center">
+            <input type="text" placeholder="Search " className="border rounded-l-full border-gray-400 outline-none px-4 py-2 w-[35vw]"/>
+            <div className="border px-4 py-[6px] rounded-r-full bg-gray-100 hover:bg-gray-200 cursor-pointer border-gray-400">
+              <CiSearch size={28}/>
             </div>
           </div>
-          <div>
-            <FaMicrophone size={30}/>
+          <div className="ml-2 rounded-full p-[9px] bg-gray-100 hover:bg-gray-200">
+            <FaMicrophone size={20}/>
           </div>
         </div>
-        <div className="flex items-center  gap-3">
-          <div>
-            <MdVideoCall size={30}/>
+        <div className="flex items-center gap-8 ">
+          <div >
+            <MdVideoCall className="cursor-pointer hover:bg-gray-200 rounded-full p-2 box-content"  size={25}/>
           </div>
           <div>
-            <FaRegBell size={30}/>
+            <FaRegBell className="cursor-pointer hover:bg-gray-200 rounded-full p-2 box-content" size={25}/>
           </div>
           <div>
-            <Avatar className="rounded-full h-20"   name="siddharth rukadikar" size={30}/>
+            <Avatar className="h-20 cursor-pointer hover:bg-gray-200 rounded-full "   name="siddharth rukadikar" size={35}/>
           </div>
         </div>
       </div>

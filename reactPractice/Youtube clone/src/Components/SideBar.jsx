@@ -140,7 +140,7 @@ function Sidebar() {
 
   return (
     <>
-      <div className="overflow-y-scroll w-[17vw] h-full pl-4">
+      <div className="overflow-y-scroll w-[15%]  h-full pl-4">
         <div className=" flex flex-col gap-2  ">
           {sidebarItem1.map((item, idx) => {
             return (
