@@ -7,7 +7,7 @@ const AuthContext=createContext()
 function AuthProvider({children}) {
     const [loading,setLoading]=useState(false)
     const [data,setData]=useState([])
-    const [value,setValue]=useState("new songs")
+    const [value,setValue]=useState("new songs ")
 
     useEffect(() => {
         fetchAllData(value)

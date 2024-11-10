@@ -27,7 +27,7 @@ function Video({ video }) {
           <div className="flex flex-col">
             <h2 className="line-clamp-2 text-[16px]">{video?.title}</h2>
             <p className="flex items-center text-[13px] gap-1">
-              {video?.author?.title}{" "}
+              {video?.author?.title}
               <span className="pt-1 text-gray-500">
                 {video?.author?.badges[0]?.type === "VERIFIED_CHANNEL" ? (
                   <BsFillCheckCircleFill />
