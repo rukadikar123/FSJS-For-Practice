@@ -10,8 +10,8 @@ function Home() {
     "This is a sample document text for comparison. It demonstrates the functionality.";
   return (
     <>
-    <div className="mx-auto p-10 pt-18">
-      <h1 className="text-4xl text-center text-blue-500 mb-10">Document Comparison</h1>
+    <div className="mx-auto p-10 md:pt-18 pt-14">
+      <h1 className="md:text-4xl text-xl text-center text-blue-500 md:mb-10 mb-8">Document Comparison</h1>
       <UploadedDoc setUploadedText={setUploadedText} />
       {uploadedText && (
         <Compare sampleText={sampleText} uploadedText={uploadedText} />
