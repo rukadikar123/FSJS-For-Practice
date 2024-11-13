@@ -7,23 +7,21 @@ function Compare({ sampleText, uploadedText }) {
 
   return (
     <>
-      <div className="w-full">
-        <div className="pl-10 flex flex-col gap-6 mt-20 w-full">
-          <h1 className="text-[30px]">Comparison Result:</h1>
-          <div className="w-full">
-            {diff.map((item, idx) => (
-              <div
-                className={`text-[20px]  w-full ${
-                  item.added ? "text-green-700" : "text-black"
-                } ${item.removed ? "text-red-700" : "text-black"} ${
-                  item.removed ? "line-through" : "text-black"
-                } `}
-                key={idx}
-              >
-                {item.value}
-              </div>
-            ))}
-          </div>
+      <div className="bg-white shadow-md p-10 rounded-lg w-3/4 mx-auto mt-10">
+        <h1 className="text-2xl mb-4 pl-2">Comparison Result:</h1>
+        <div className="flex flex-wrap">
+          {diff.map((item, idx) => (
+            <span
+              className={`text-lg pl-2 inline-block ${
+                item.added ? "text-green-700" : "text-black"
+              } ${item.removed ? "text-red-700" : "text-black"} ${
+                item.removed ? "line-through" : "text-black"
+              } `}
+              key={idx}
+            >
+              {item.value}
+            </span>
+          ))}
         </div>
       </div>
     </>

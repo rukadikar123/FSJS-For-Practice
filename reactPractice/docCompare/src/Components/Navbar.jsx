@@ -1,14 +1,32 @@
 import React from "react";
-import {Link} from 'react-router-dom'
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
     <>
-      <nav className="flex items-center justify-between px-[100px] mt-10 ">
-        <h1 className="font-bold text-[20px]">DocDifference</h1>
-        <ul className="flex justify-between gap-20">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
+      <nav className=" sticky top-0 bg-blue-500 flex items-center justify-between py-8 px-20 shadow-md">
+        <h1 className="font-bold text-2xl hover:text-yellow-300 cursor-pointer text-white">DocDifference</h1>
+        <ul className="flex justify-between gap-10">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `text-lg  hover:text-yellow-300 transition duration-300 ${
+                isActive ? "text-white" : "text-gray-300"
+              }`
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `text-lg  hover:text-yellow-300 transition duration-300 ${
+                isActive ? "text-white" : "text-gray-300"
+              }`
+            }
+          >
+            About
+          </NavLink>
         </ul>
       </nav>
     </>

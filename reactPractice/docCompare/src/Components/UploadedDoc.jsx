@@ -11,10 +11,10 @@ function UploadedDoc({ setUploadedText }) {
 
   return (
     <>
-      <div className="ml-10 flex flex-col gap-4 mt-10">
-        <h1 className="text-[30px]">Upload Document</h1>
+      <div className="bg-gray-100 shadow-md p-10 rounded-lg w-1/2 mx-auto">
+        <h1 className="text-2xl mb-4">Upload Document</h1>
 
-        <input className="w-full" type="file" accept=".txt" onChange={handleFileChange} />
+        <input className="block w-2/3 text-lg py-2 pl-2 bg-gray-100 border border-gray-300 rounded-lg" type="file" accept=".txt" onChange={handleFileChange} />
       </div>
     </>
   );
