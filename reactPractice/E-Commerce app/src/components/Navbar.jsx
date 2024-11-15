@@ -7,7 +7,7 @@ import { FaUser } from "react-icons/fa";
 function Navbar() {
   return (
     <>
-      <nav className="flex flex-col bg-gray-50 gap-4 py-4 shadow-md sticky top-0 justify-center">
+      <nav className="flex flex-col bg-gray-50 gap-4 py-4 shadow-md sticky top-0 justify-center z-20">
         <div className="flex items-center justify-center w-full gap-8">
             <Link to='/' className="text-2xl font-semibold">e-Shop</Link>
             <form className="flex relative items-center">
@@ -22,7 +22,7 @@ function Navbar() {
         </div>
         <div className="flex items-center justify-center gap-12 text-md font-semibold">
             <Link to='/' className="hover:text-yellow-600">Home</Link>
-            <Link to='/' className="hover:text-yellow-600">Shop</Link>
+            <Link to='/shop' className="hover:text-yellow-600">Shop</Link>
             <Link to='/' className="hover:text-yellow-600">Contact</Link>
             <Link to='/' className="hover:text-yellow-600">About</Link>
         </div>
