@@ -12,7 +12,7 @@ function ShopCard() {
     e.stopPropagation()
     e.preventDefault()
     dispatch(addToCart({...product}))
-    alert("Product added to cart succesfully")
+   
   }
 
   return (

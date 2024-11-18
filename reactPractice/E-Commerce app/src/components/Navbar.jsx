@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
+import {useSelector} from 'react-redux'
 
 function Navbar() {
+  const cart=useSelector(state => state.cart.products)
   return (
     <>
       <nav className="flex flex-col bg-gray-50 gap-4 py-4 shadow-md sticky top-0 justify-center z-20">
@@ -14,9 +16,9 @@ function Navbar() {
                 <input className="w-[53vw] flex-1 border-2 p-2 rounded-md outline-none" type="text" placeholder="Search For Products" />
                 <CiSearch className="absolute right-3 text-red-700" size={20}/>
             </form>
-            <Link to='/cart'>
-            <FaShoppingCart size={20}/>
-            </Link>
+            <Link to='/cart' className="relative">
+            <FaShoppingCart size={25}/>{cart.length>0 && <span className="absolute bottom-2 w-5 text-center h-6 left-6 bg-red-600 text-white rounded-full">{cart.length}</span>}
+            </Link> 
             <button className="hidden md:block text-lg">Login | Register</button>
             <button className="block md:hidden text-lg"><FaUser /></button>
         </div>

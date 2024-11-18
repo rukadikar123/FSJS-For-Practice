@@ -42,37 +42,37 @@ export const MockData=[
     {
         id:4,
         image:image6,
-        name:"product 1",
+        name:"product 4",
         price:25.99
     },
     {
         id:5,
         image:image5,
-        name:"product 1",
+        name:"product 5",
         price:59.99
     },
     {
         id:6,
         image:image4,
-        name:"product 1",
+        name:"product 6",
         price:14.99
     },
     {
         id:7,
         image:image3,
-        name:"product 1",
+        name:"product 7",
         price:55.99
     },
     {
         id:8,
         image:image2,
-        name:"product 1",
+        name:"product 8",
         price:27.99
     },
     {
         id:9,
         image:image1,
-        name:"product 1",
+        name:"product 9",
         price:70.00
     },
     {
