@@ -21,35 +21,35 @@ function Home() {
 
   return (
     <>
-      <div className="mt-10 w-full flex justify-center gap-6">
-        <div className="flex flex-col w-1/5 h-full bg-gray-100 gap-6">
-          <h1 className="text-xl bg-red-600 p-2 text-white font-semibold ">
+      <div className="mt-10  flex justify-center gap-3 md:gap-6">
+        <div className="flex flex-col md:w-1/5 w-[27vw] h-full bg-gray-100 md:gap-6">
+          <h1 className="md:text-xl text-md bg-red-600 p-2  text-white font-semibold ">
             SHOP BY CATEGORIES
           </h1>
-          <ul className="flex flex-col gap-2 pb-2">
+          <ul className="flex flex-col md:gap-2 gap-1 pb-2">
             {Categories.map((category, idx) => (
               <li
-                className="flex text-md items-center gap-2 cursor-pointer transform transition-transform duration-100 hover:scale-105"
+                className="flex md:text-md text-sm items-center md:gap-2 gap-1 cursor-pointer transform transition-transform duration-100 hover:scale-105"
                 key={idx}
               >
-                <div className="rounded-full h-2 w-2 ml-4 border  border-red-500"></div>
+                <div className="rounded-full h-2 w-2 md:ml-4 border  border-red-500"></div>
                 {category}
               </li>
             ))}
           </ul>
         </div>
-        <div className="relative w-[67vw] h-[65vh]">
-          <img src={heroImg} className="w-full h-full" alt="" />
-          <div className="flex flex-col absolute  top-[80px] left-10">
-            <p className="text-md pb-3 text-black/65">Siddharth | e-Shop</p>
-            <h1 className="text-3xl  pb-3 font-bold text-black/75">
+        <div className="relative w-[67vw] md:h-[65vh]">
+          <img src={heroImg} className="md:w-full w-[65vw] md:h-full h-[35vh]" alt="" />
+          <div className="flex flex-col absolute  md:top-[80px] top-[20px] left-2 md:left-10">
+            <p className="md:text-md text-sm md:pb-3 text-black/65">Siddharth | e-Shop</p>
+            <h1 className="md:text-3xl text-md  pb-3 font-bold text-black/75">
               Welcome To E-Shop
             </h1>
-            <p className="text-xl  pb-3 font-semibold text-black/70">
+            <p className="md:text-xl text-xs md:pb-3 font-semibold text-black/70">
               Million+ products
             </p>
             <div>
-              <button className="text-md px-6 py-1 transform  transition-transform duration-300 hover:scale-105 text-white bg-red-500">
+              <button className="md:text-md text-[9px] mt-2 px-2 md:px-6 py-1 transform  transition-transform duration-300 hover:scale-105 text-white bg-red-500">
                 SHOP NOW
               </button>
             </div>
@@ -58,7 +58,7 @@ function Home() {
       </div>
       <InfoSection />
       <CategoriesSection />
-      <div className="mx-20">
+      <div className="md:mx-20 mx-4">
         <h1 className="text-center font-semibold text-2xl py-8 ">
           Top Products
         </h1>

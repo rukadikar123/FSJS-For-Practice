@@ -7,21 +7,34 @@ import ShopCard from "./components/ShopCard";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import Order from "./components/Order"
+import Login from "./components/Login";
+import Register from "./components/Register";
+import FilteredData from "./components/FilteredData";
+import ProductInfoCard from "./components/ProductInfoCard";
+import About from "./components/About";
+import ContactSection from "./components/ContactSection";
 
 function App() {
 
   const [order,setOrder]=useState(null)
+  const [user,setUser]=useState("")
 
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        <Navbar user={user} setUser={setUser}/>
         <Routes>
           <Route path="/" exact element={<Home />} />
+          <Route path="/about"  element={<About />} />
+          <Route path="/contact"  element={<ContactSection />} />
           <Route path="/shop" element={<ShopCard />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout  setOrder={setOrder}/>} />
           <Route path="/order-Confirmation" element={<Order  order={order}/>} />
+          <Route path="/login" element={<Login setUser={setUser}/>} />
+          <Route path="/register" element={<Register/>} />
+          <Route path="/filtered-data" element={<FilteredData/>} />
+          <Route path="/product/:id" element={<ProductInfoCard/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
