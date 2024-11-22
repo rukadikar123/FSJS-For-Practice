@@ -24,7 +24,7 @@ function Register() {
     };
   return (
     <div>
-        <div className="h-full flex  items-center justify-center mt-10 w-full">
+        <div className="h-full flex  items-center justify-center mt-8 w-full">
         <div className="border-2 rounded-md border-red-300 h-full py-2 w-full mx-6 md:mx-0 md:w-[25vw] flex flex-col bg-slate-700 text-white items-start gap-6 justify-start px-6 ">
           <h1 className="font-bold  text-[25px] mt-2">Sign Up</h1>
           <div>
