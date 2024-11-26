@@ -6,11 +6,13 @@ import StudentLists from './Components/StudentLists'
 import Updatestudents from './Components/Updatestudents'
 import AddFaculty from './Components/AddFaculty'
 import FacultyList from './Components/FacultyList'
+import SignUp from './Components/SignUp'
+import Login from './Components/Login'
 
 const myRouter=createBrowserRouter([
    {
-    path:'', 
-    Component:Dashboard,
+    path:'dashboard', 
+    Component:Dashboard, 
     children:[
       {path:'', Component:StudentLists},
       {path:'addStudent', Component:AddStudents},
@@ -19,7 +21,9 @@ const myRouter=createBrowserRouter([
       {path:'addFaculty' , Component:AddFaculty},
       {path:'facultyList' , Component:FacultyList}
     ]
-   }
+   },
+   {path:'signup', Component:SignUp},
+   {path:'login', Component:Login}
 ])
 
 function App() {

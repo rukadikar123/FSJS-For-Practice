@@ -20,7 +20,7 @@ function Updatestudents() {
         name:Name,
         phone:phone
     }).then(res=>{
-        navigate('/studentList')
+        navigate('/dashboard/studentList')
     }).catch(err=>{
         console.log(err);
         
