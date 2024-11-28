@@ -7,30 +7,13 @@ import InfoSection from "./InfoSection";
 import CategoriesSection from "./CategoriesSection";
 import ProductCard from "./ProductCard";
 
-function Home() {
-  const [data, setData] = useState();
-  const [categories,setcategories]=useState()
+function Home({data,categories}) {
+  
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  
   const Products = useSelector((state) => state.products.products);
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.in/api/products/category")
-      .then((res) => res.json())
-      .then((res) => {
-        setcategories(res.categories)
-    });
-  }, []);
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.in/api/products?limit=20")
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res.products);
-        setData(res.products);
-      });
-    dispatch(setProducts(data));
-  }, []);
 
   return (
    <>
