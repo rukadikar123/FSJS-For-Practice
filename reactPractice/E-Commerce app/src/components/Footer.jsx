@@ -37,6 +37,8 @@ function Footer() {
           <div className="flex flex-col gap-2 md:gap-4 mr-2">
             <h1 className="md:text-2xl text-xl text-gray-200 font-medium">Follow us</h1>
             <ul className="text-white flex gap-2">
+
+              {/* Symbols of social platforms */}
               <li>
                 <a href="https://www.facebook.com/login/" target="_blank">
                 <FaFacebook size={21} />

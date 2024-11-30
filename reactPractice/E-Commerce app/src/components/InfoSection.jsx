@@ -37,6 +37,7 @@ function InfoSection() {
   return (
     <>
       <div className="md:flex md:items-center w-full  md:w-[90vw] py-3 md:justify-center grid grid-cols-2 gap-6 md:gap-10 md:mx-20 mx-4 my-16">
+        {/* Mapping over InfoItems */}
         {InfoItems.map((item, idx) => (
           <div
             className="border-2 shadow-md w-full md:w-1/2 flex-1 rounded-lg p-2 gap-2  flex flex-col items-center transform  transition-transform duration-300 hover:scale-105 cursor-pointer"

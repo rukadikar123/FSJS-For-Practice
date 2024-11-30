@@ -13,7 +13,7 @@ function ContactSection() {
     <div className="container mx-auto p-4 md:p-6 lg:p-8">
       <h1 className="text-3xl font-bold mb-4">Get in Touch</h1>
       <p className="text-lg leading-relaxed mb-8">
-        Have a question or concern? We're here to help.
+        Have a question or concern? We are here to help.
       </p>
       <div className="flex flex-wrap justify-center mb-8">
         <div className="w-full md:w-1/2 xl:w-1/3 p-4">

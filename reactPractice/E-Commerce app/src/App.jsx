@@ -17,17 +17,17 @@ import ContactSection from "./components/ContactSection";
 function App() {
 
   const [order,setOrder]=useState(null)
-  const [user,setUser]=useState("")
+  const [user,setUser]=useState()
 
   return (
     <>
       <BrowserRouter>
         <Navbar user={user} setUser={setUser}/>
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          <Route path="/" exact element={<Home user={user}/>} />
           <Route path="/about"  element={<About />} />
           <Route path="/contact"  element={<ContactSection />} />
-          <Route path="/shop" element={<ShopCard />} />
+          <Route path="/shop" element={<ShopCard user={user}/>} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout  setOrder={setOrder}/>} />
           <Route path="/order-Confirmation" element={<Order  order={order}/>} />

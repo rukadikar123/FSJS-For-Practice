@@ -4,15 +4,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/CartSlice";
 import { Link } from "react-router-dom";
 
-function ShopCard() {
-  const products = useSelector((state) => state.products.products);
+function ShopCard({user}) {
+  const products = useSelector((state) => state.products.products);  // Retrieve product state from ProductSlice using Redux Toolkit's useSelector
+
 
   const dispatch=useDispatch()
 
   const handleAddToCart=(e,product)=>{
     e.stopPropagation()
     e.preventDefault()
-    dispatch(addToCart({...product}))
+    if(user){
+      dispatch(addToCart({...product}))
+    }else{
+      alert("Please login to add product in your cart")
+    }
    
   }
 
@@ -21,6 +26,8 @@ function ShopCard() {
       <div className="md:mx-20 mx-4  mt-4">
         <h1 className="text-center font-semibold text-3xl pb-6 md:py-8 ">Shop</h1>
         <div className="grid md:grid-cols-5 grid-cols-2 w-full  h-full mb-10 gap-4 md:gap-10 ">
+
+          {/* Mapping over Products */}
           {products.map((product) => (
             <Link to={`/product/${product.id}`}
               className="flex flex-col rounded-md shadow-md cursor-pointer border-2 p-2 w-full flex-1 h-full transform  transition-transform duration-300 hover:scale-105"

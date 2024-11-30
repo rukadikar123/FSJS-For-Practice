@@ -37,7 +37,7 @@ function ProductInfoCard() {
 
       <div className="flex flex-col gap-4 mt-10 ml-8 md:ml-96">
         <p className="md:text-4xl text-2xl">Product Description here</p>
-        <p className="md:text-xl text-xs">{productItem?.description}</p>
+        <p className="md:text-xl text-[10px]">{productItem?.description}</p>
       </div>
     </div>
   );

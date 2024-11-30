@@ -11,15 +11,16 @@ import ProductCard from "./ProductCard";
 import ShopCard from "./ShopCard";
 import { useNavigate } from "react-router-dom";
 
-function Home() {
+function Home({user}) {
   const dispatch = useDispatch();
 
-  const products = useSelector((state) => state.products.products);
+  const products = useSelector((state) => state.products.products);   // Retrieve product state from ProductSlice using Redux Toolkit's useSelector
+
 
   const navigate=useNavigate()
 
   useEffect(() => {
-    dispatch(setProducts(MockData));
+    dispatch(setProducts(MockData));     // Dispatching a setProducts function with mockData
   }, []);
 
   return (
@@ -30,6 +31,8 @@ function Home() {
             SHOP BY CATEGORIES
           </h1>
           <ul className="flex flex-col md:gap-2 gap-1 pb-2">
+
+            {/* Mapping over Categories */}
             {Categories.map((category, idx) => (
               <li
                 className="flex md:text-md text-sm items-center md:gap-2 gap-1 cursor-pointer transform transition-transform duration-100 hover:scale-105"
@@ -59,15 +62,15 @@ function Home() {
           </div>
         </div>
       </div>
-      <InfoSection />
-      <CategoriesSection />
+      <InfoSection />                  {/* adding InfoSection */}
+      <CategoriesSection />            {/* adding CategoriesSection */}
       <div className="md:mx-20 mx-4">
         <h1 className="text-center font-semibold text-2xl py-8 ">
           Top Products
         </h1>
-        <ProductCard products={products} />
+        <ProductCard products={products} user={user} />   {/* adding ProductCard  and sending products and user as a props*/}
       </div>
-      <ShopCard />
+      <ShopCard user={user}/>                             {/* adding ShopCard  and sending user as a props*/}
     </>
   );
 }

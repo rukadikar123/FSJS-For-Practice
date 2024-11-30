@@ -1,26 +1,27 @@
+import { getAuth,signInWithEmailAndPassword } from "firebase/auth";
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { app } from "../firebase";
 
 function Login({setUser}) {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(""); 
   const [password, setPassword] = useState("");
  
   const navigate=useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const userData=JSON.parse(localStorage.getItem("credentials"))
-    
-    if(userData.email=== email && userData.password=== password  ){
-        navigate('/')
-        alert("logged in succesfully")
-        const {Name}=userData
-        const firstName= Name.substring(0, 1).toUpperCase()
-        setUser(firstName)
-    }
-    setEmail("");
-    setPassword("");
+    const auth=getAuth(app)           // Get the Firebase authentication instance
+    signInWithEmailAndPassword(auth,email,password)  // Attempt to sign in with email and password
+    .then((res)=>{
+      console.log(res.user.email);
+      setUser(res.user.email)    // Update the user state with the signed-in user's email
+      navigate('/')
+      
+    })
+    .catch(err=> console.log(err)  // Handle sign-in errors
+    )
   };
   return (
     <>

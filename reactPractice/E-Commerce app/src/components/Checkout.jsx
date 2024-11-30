@@ -5,13 +5,13 @@ import { FaAngleUp } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 function Checkout({setOrder}) {
-  const [paymentMethod, setPaymentMethod] = useState("cod");
-  const [billingToggler, setBillingToggler] = useState(true);
+  const [paymentMethod, setPaymentMethod] = useState("cod");   // state for paymet Method
+  const [billingToggler, setBillingToggler] = useState(true);   
   const [shippingToggler, setShippingToggler] = useState(true);
   const [paymentToggle, setPaymentToggle] = useState(true);
 
   
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.cart);    // Retrieve cart state from cartSlice using Redux Toolkit's useSelector
 
   const navigate=useNavigate()
 
@@ -22,14 +22,14 @@ function Checkout({setOrder}) {
   })
 
   const handleOrder=()=>{
-    const newOrder={
-      product:cart.products,
-      orderNumber:Math.floor(Math.random() * 90000) + 10000,
-      shippingInformation:shippingInfo,
+    const newOrder={                                           // Creating new Order
+      product:cart.products,      
+      orderNumber:Math.floor(Math.random() * 90000) + 10000,   // generating a random number for order number.
+      shippingInformation:shippingInfo,                        // setting shipping information
       totalPrice:cart.totalPrice
     }
     setOrder(newOrder)
-    navigate('/order-Confirmation')
+    navigate('/order-Confirmation')                            // to navigate order-Confirmation page
 
   } 
 
@@ -43,7 +43,7 @@ function Checkout({setOrder}) {
               onClick={() => setBillingToggler(!billingToggler)}
               className="flex items-center justify-between cursor-pointer border p-2"
             >
-              <h1 className="md:text-2xl text-lg">Billing Information </h1>
+              <h1 className="md:text-2xl text-lg">Billing Information </h1>      {/* Billing Information starts */}
               <span>
                 {billingToggler ? (
                   <FaAngleDown size={20} />
@@ -93,7 +93,7 @@ function Checkout({setOrder}) {
               onClick={() => setShippingToggler(!shippingToggler)}
               className="flex items-center justify-between cursor-pointer border "
             >
-              <h1 className="md:text-2xl text-lg p-2">Shipping Information </h1>
+              <h1 className="md:text-2xl text-lg p-2">Shipping Information </h1>    {/* Shipping Information starts */}
               <span className="mr-2">
                 {shippingToggler ? (
                   <FaAngleDown size={20} />
@@ -146,7 +146,7 @@ function Checkout({setOrder}) {
               onClick={() => setPaymentToggle(!paymentToggle)}
               className="flex items-center justify-between border cursor-pointer"
             >
-              <h1 className="md:text-2xl text-lg p-2">Payment Method </h1>
+              <h1 className="md:text-2xl text-lg p-2">Payment Method </h1>       {/* Payment Info starts */}
               <span className="mr-2">
                 {paymentToggle ? (
                   <FaAngleDown size={20} />
@@ -164,7 +164,7 @@ function Checkout({setOrder}) {
                   onChange={() => setPaymentMethod("cod")}
                 />
                 <label htmlFor="" className="md:text-lg text-md pl-2 ">
-                  Cash On Delivery
+                  Cash On Delivery                                        
                 </label>
               </div>
               <div className="mt-2">
@@ -181,7 +181,7 @@ function Checkout({setOrder}) {
               <div className="mt-4 pl-2 rounded-lg bg-gray-300">
                 {paymentMethod === "DC" && (
                   <div>
-                    <h1 className="md:text-2xl text-lg py-4">Debit Card Information</h1>
+                    <h1 className="md:text-2xl text-lg py-4">Debit Card Information</h1>      {/* Debit card information */}
                     <div className="py-4">
                       <div className="flex flex-col md:mb-4 mb-2 gap-2">
                         <label className="md:text-xl text-md" htmlFor="">
@@ -237,8 +237,8 @@ function Checkout({setOrder}) {
         </div>
       </div>
       <div className="md:mt-32 mt-10 w-full md:w-[25vw] h-full shadow-md border-2 p-4">
-      <h1 className="md:text-2xl text-xl mb-8 font-semibold">Order Summary</h1>
-        {cart.products.map((product) => (
+      <h1 className="md:text-2xl text-xl mb-8 font-semibold">Order Summary</h1>              {/* Order Summery starts */}
+        {cart.products.map((product) => (                                                 
           <div className="flex my-4 flex-col gap-6" key={product.id}>
             <div className="flex r justify-between">
               <img className="md:h-24 h-20" src={product.image} alt="" />

@@ -36,7 +36,7 @@ function App() {
         setData(res.products);
       });
     dispatch(setProducts(data));
-  }, []);
+  }, [data]);
   return (
     <>
       <BrowserRouter>

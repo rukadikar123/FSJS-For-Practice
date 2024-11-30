@@ -7,18 +7,20 @@ import { addToCart } from "../redux/CartSlice";
 
 function ProductInfoCard() {
   const { id } = useParams();
-  const products = useSelector(state => state.products.products);
-  const cart=useSelector(state=> state.cart.products)
+  const products = useSelector(state => state.products.products);   // Retrieve product state from ProductSlice using Redux Toolkit's useSelector
+
+  const cart=useSelector(state=> state.cart.products)      // Retrieve product state from CartSlice using Redux Toolkit's useSelector
+
   const [productItem, setProductItem] = useState();
 
   useEffect(() => {
-    const newProduct = products.find(item => item.id=== parseInt(id));
-    setProductItem(newProduct);
+    const newProduct = products.find(item => item.id=== parseInt(id));   // Finding the product which id is equal to the id we got from useParams 
+    setProductItem(newProduct);                       
   }, [id]);
 
   const dispatch=useDispatch()
   const handleAddToCart=()=>{
-    dispatch(addToCart(productItem))
+    dispatch(addToCart(productItem)) 
   }
 
   return (

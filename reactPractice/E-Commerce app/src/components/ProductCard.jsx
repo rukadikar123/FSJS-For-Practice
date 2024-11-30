@@ -4,20 +4,26 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/CartSlice";
 import { Link } from "react-router-dom";
 
-function ProductCard({ products }) {
+function ProductCard({ products ,user }) {
 
   const dispatch=useDispatch()
 
   const handleAddToCart=(e,product)=>{
     e.stopPropagation()
     e.preventDefault()
-    dispatch(addToCart({...product}))
+    if(user){
+      dispatch(addToCart({...product}))         //dispatching addToCart Function with product as action
+    }else{
+      alert("Please login to add product in your cart")
+    }
    
   }
   return (
     <>
       <div className="grid md:grid-cols-5 w-full grid-cols-2 h-full mb-10 gap-4 md:gap-10 ">
-        {products.slice(0, 5).map((product) => (
+
+        {/* mapping over products and doing slicing to get 5 product to show  */}
+        {products?.slice(0, 5).map((product) => (
           <Link to={`/product/${product.id}`}
             className="flex flex-col rounded-md shadow-md cursor-pointer border-2 p-2 w-full flex-1 h-full transform  transition-transform duration-300 hover:scale-105"
             key={product.id}

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function ChangeAddress({setAddress, setIsModalOpen}) {
     const [newAddress,setNewAddress]=useState("")
     const OnClose=()=>{
-        setAddress(newAddress)
+        setAddress(newAddress)    // setting new address
         setIsModalOpen(false)
     }
   return (

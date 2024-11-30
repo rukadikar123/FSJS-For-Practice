@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import {getAuth,createUserWithEmailAndPassword} from 'firebase/auth'
+import { app } from '../firebase';
+
 
 function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [Name,setName]=useState("")
 
     
 
@@ -12,15 +14,17 @@ function Register() {
   
     const handleSubmit = (e) => {
       e.preventDefault();
-    const credentials={
-        Name,
-        email,
-        password
-    }
-    localStorage.setItem("credentials" , JSON.stringify(credentials))
-      setEmail("");
-      setName("")
-      setPassword("");
+      const auth=getAuth(app)                               // Get the Firebase authentication instance
+      createUserWithEmailAndPassword(auth,email,password)   // Attempt to login with email and password
+      .then((res)=>{
+        console.log(res);
+        
+      })
+      .catch((err)=>{
+        console.log(err);     // Handle Login  errors
+        
+      })
+    
     };
   return (
     <div>
@@ -29,13 +33,7 @@ function Register() {
           <h1 className="font-bold  text-[25px] mt-2">Sign Up</h1>
           <div>
             <form onSubmit={(e) => handleSubmit(e)} className="flex flex-col">
-            <input
-                className="bg-transparent  outline-none border-2 rounded-3xl my-3 px-4 py-2 w-full md:w-[20vw] border-pink-400"
-                type="text"
-                placeholder="Name"
-                value={Name}
-                onChange={(e) => setName(e.target.value)}
-              />
+            
               <input
                 className="bg-transparent   outline-none border-2 rounded-3xl my-3 px-4 py-2 w-full md:w-[20vw] border-pink-400"
                 type="email"

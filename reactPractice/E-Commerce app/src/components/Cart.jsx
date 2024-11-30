@@ -11,7 +11,7 @@ function Cart() {
   const cart = useSelector((state) => state.cart.products);
   const product=useSelector((state) => state.cart)
 
-  const [address, setAddress]=useState("Shipping to 132 Default St. Default City. DC")
+  const [address, setAddress]=useState("Shipping to 132 Default St. Default City. DC") // state to change address with default address.
 
   const [isModalOpen,setIsModalOpen]=useState(false)
 
@@ -20,16 +20,16 @@ function Cart() {
   const navigate=useNavigate()
 
   const handleIncrease=(product)=>{
-      dispatch(increaseQuantity(product))
+      dispatch(increaseQuantity(product))    // dispatching increaseQuantity function with product
   }
 
 
 const handleDecrease=(product)=>{
-  dispatch(decreaseQuantity(product))
+  dispatch(decreaseQuantity(product))         // dispatching decreaseQuantity function with product
 }
 
 const handleRemove=(product)=>{
-    dispatch(removeFromCart(product))
+    dispatch(removeFromCart(product))          // dispatching removeFromCart function with product
 }
 
   return (
@@ -60,28 +60,31 @@ const handleRemove=(product)=>{
                   </tr>
                 </thead>
                 <tbody>
+
+              {/* Mapping over Cart products */}
+
                   {cart.map((product) => (
                     <tr key={product.id} className="">
                       <td className="md:px-4 px-1 py-2 md:text-xl text-xs font-semibold flex flex-col md:flex-row md:items-center gap-1 md:gap-20 border border-gray-300">
                         <img className="md:h-28 h-10 w-10 md:w-24" src={product.image} alt="" />
-                        {product.name}
+                        {product.name}  {/* Title Of product */}
                       </td>
                       <td className="md:px-4 px-1 py-2 md:text-xl text-xs text-center border border-gray-300">
-                        ${product.price}
+                        ${product.price}   {/* Price Of product */}
                       </td>
                       <td className="md:px-4 px-1 py-2 text-center border border-gray-300">
                         <span onClick={()=>handleDecrease(product)} className="border border-gray-300 px-1 cursor-pointer font-semibold md:text-xl text-sm ">
                           -
                         </span>
                         <span className="border border-gray-300 px-1 cursor-pointer font-semibold text-sm md:text-xl">
-                          {product.quantity}
+                          {product.quantity}   {/* quantity Of product */}
                         </span>
                         <span onClick={()=>handleIncrease(product)} className="border border-gray-300 px-1 cursor-pointer font-semibold md:text-xl text-sm">
                           +
                         </span>
                       </td>
                       <td className="md:px-4 px-1 py-2 text-sm md:text-lg text-center border border-gray-300">
-                        ${(product.quantity * product.price).toFixed(2)}
+                        ${(product.quantity * product.price).toFixed(2)}   {/* total price of product */}
                       </td>
                       <td className="md:px-4 px-0 py-2 text-center border  border-gray-300">
                         <FaTrashAlt onClick={()=>handleRemove(product)} size={20} className="ml-6 cursor-pointer" />
@@ -95,18 +98,18 @@ const handleRemove=(product)=>{
               <h1 className="md:text-2xl text-xl font-semibold">CART TOTALS</h1>
               <div className="flex items-center w-full justify-between pr-4">
                 <h3 className="md:text-xl text-md">TOTAL ITEMS: </h3>
-                <p className="md:text-xl text-md">{product.totalQuantity}</p>
+                <p className="md:text-xl text-md">{product.totalQuantity}</p>   {/* Total quantity of products  */}
                 
               </div>
               <hr className="border-t-2 border-gray-300 md:w-[26vw] w-5/6 mx-auto"/>
               <div className="flex flex-col gap-1">
                 <h1 className="md:text-xl text-lg">Shipping:</h1>
-                <p className=" md:pl-2">{address}</p>
+                <p className=" md:pl-2">{address}</p>      {/* Address  */}
                 <div><button onClick={()=> setIsModalOpen(true)}  className="underline ">Change Address</button></div>
               </div>
               <div className="flex w-full justify-between items-center pr-4">
                 <h1 className="text-xl">Total Price:</h1>
-                <p>{(product.totalPrice).toFixed(2)}</p>
+                <p>{(product.totalPrice).toFixed(2)}</p>   
               </div>
               <div className="w-full flex justify-center items-center">
                 <button onClick={()=>navigate('/checkout')} className="bg-red-600 w-full text-white  font-medium rounded-sm py-2">Proceed to Checkout</button>

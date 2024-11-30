@@ -56,10 +56,13 @@ const CartSlice=createSlice({
                 state.totalQuantity-=itemIndex.quantity
                 state.products=state.products.filter((item)=> item.id !==itemIndex.id)
             }
+        },
+        removeAllCartItems(state){
+            state.products=[]
         }
     }
 })
 
-export const {addToCart , increaseQuantity , decreaseQuantity , removeFromCart}=CartSlice.actions
+export const {addToCart , increaseQuantity , decreaseQuantity , removeFromCart, removeAllCartItems}=CartSlice.actions
 
 export default  CartSlice.reducer

@@ -8,7 +8,7 @@ import { increaseQuantity ,decreaseQuantity, removeFromCart } from "../redux/Car
 import {useNavigate} from "react-router-dom"
 
 function Cart() {
-  const cart = useSelector((state) => state.cart.products);
+  const cart = useSelector((state) => state.cart.CartProducts);
   const product=useSelector((state) => state.cart)
 
   const [address, setAddress]=useState("Shipping to 132 Default St. Default City. DC")
