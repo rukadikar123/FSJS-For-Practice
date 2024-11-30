@@ -9,22 +9,21 @@ import { removeAllCartItems } from "../redux/CartSlice";
 
 function Navbar({ user, setUser }) {
   const [search, setSearch] = useState("");
-  const cart = useSelector((state) => state.cart.products);    // Retrieve product state from CartSlice using Redux Toolkit's useSelector
-
+  const cart = useSelector((state) => state.cart.products); // Retrieve product state from CartSlice using Redux Toolkit's useSelector
 
   const dispatch = useDispatch();
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (search) {
-      dispatch(setSearchTerm(search));    //dispatching setSearchTerm function with value search
-      navigate("/filtered-data");         // navigating to filtered-data page
+      dispatch(setSearchTerm(search)); //dispatching setSearchTerm function with value search
+      navigate("/filtered-data"); // navigating to filtered-data page
     }
   };
 
   const handleLogOut = () => {
-    setUser(null)
-    dispatch(removeAllCartItems())
+    setUser(null);
+    dispatch(removeAllCartItems());
     navigate("/");
     alert("logged out succesfully");
   };
@@ -57,13 +56,15 @@ function Navbar({ user, setUser }) {
               </span>
             )}
           </Link>
-          <button
-            className="hidden md:block text-lg"
-            onClick={() => navigate("/login")}
-          >
-            Login | Register
-          </button>
-          {user && (        // if user is there then this code will execute
+          {!user && (
+            <button
+              className="hidden md:block text-lg"
+              onClick={() => navigate("/login")}
+            >
+              Login | Register
+            </button>
+          )}
+          {user && ( // if user is there then this code will execute
             <div className="flex items-center">
               <span className=" md:px-3 inline-block ">
                 <FaUser className="hidden md:block" size={26} />
