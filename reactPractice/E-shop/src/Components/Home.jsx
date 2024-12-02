@@ -10,8 +10,9 @@ import ProductCard from "./ProductCard";
 function Home({data,categories}) {
   
   const navigate = useNavigate();
+
+  console.log(categories);
   
-  const Products = useSelector((state) => state.products.products);
 
 
 
@@ -67,7 +68,7 @@ function Home({data,categories}) {
         <h1 className="text-center font-semibold text-2xl py-8 ">
           Our Products
         </h1>
-        <ProductCard products={Products} />
+        <ProductCard products={data} />
       </div>
    </>
   );

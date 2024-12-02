@@ -13,6 +13,7 @@ import ProductInfoCard from "./Components/ProductInfoCard";
 import { useEffect, useState } from "react";
 import { setProducts } from "./redux/ProductSlice";
 import { useDispatch } from "react-redux";
+import ProductCard from "./Components/ProductCard";
 
 function App() {
   const [order,setOrder]=useState(null)
@@ -20,23 +21,36 @@ function App() {
   const [data, setData] = useState();
   const [categories,setcategories]=useState()
 
+  const fetchCategories=async()=>{
+      try{
+        const res=await fetch("https://fakestoreapi.in/api/products/category")
+        const data=await res.json()
+        setcategories(data.categories)
+      }catch(err){
+        console.log(err);
+        
+      }
+  }
+
+  const fetchData=async()=>{
+    try{
+      const res=await fetch("https://fakestoreapi.in/api/products?limit=20")
+      const data=await res.json()
+      setData(data.products)
+      dispatch(setProducts(data.products))
+    }catch(err){
+      console.log(err);
+      
+    }
+  }
+
   useEffect(() => {
-    fetch("https://fakestoreapi.in/api/products/category")
-      .then((res) => res.json())
-      .then((res) => {
-        setcategories(res.categories)
-    });
+    fetchCategories()
   }, []);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.in/api/products?limit=20")
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res.products);
-        setData(res.products);
-      });
-    dispatch(setProducts(data));
-  }, [data]);
+    fetchData()
+  }, []);
   return (
     <>
       <BrowserRouter>
@@ -51,7 +65,6 @@ function App() {
           <Route path="/order-Confirmation" element={<Order  order={order}/>} />
           <Route path="/filtered-data" element={<FilteredData/>} />
           <Route path="/product/:id" element={<ProductInfoCard/>} />
-
         </Routes>
         <Footer/>
       </BrowserRouter>
