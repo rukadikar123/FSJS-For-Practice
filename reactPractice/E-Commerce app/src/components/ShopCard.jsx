@@ -4,32 +4,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/CartSlice";
 import { Link } from "react-router-dom";
 
-function ShopCard({user}) {
-  const products = useSelector((state) => state.products.products);  // Retrieve product state from ProductSlice using Redux Toolkit's useSelector
+function ShopCard({ user }) {
+  const products = useSelector((state) => state.products.products); // Retrieve product state from ProductSlice using Redux Toolkit's useSelector
 
+  const dispatch = useDispatch();
 
-  const dispatch=useDispatch()
-
-  const handleAddToCart=(e,product)=>{
-    e.stopPropagation()
-    e.preventDefault()
-    if(user){
-      dispatch(addToCart({...product}))
-    }else{
-      alert("Please login to add product in your cart")
-    }
-   
-  }
+  const handleAddToCart = (e, product) => {
+    e.stopPropagation();
+    e.preventDefault();
+    dispatch(addToCart({ ...product }));
+  };
 
   return (
     <>
       <div className="md:mx-20 mx-4  mt-4">
-        <h1 className="text-center font-semibold text-3xl pb-6 md:py-8 ">Shop</h1>
+        <h1 className="text-center font-semibold text-3xl pb-6 md:py-8 ">
+          Shop
+        </h1>
         <div className="grid md:grid-cols-5 grid-cols-2 w-full  h-full mb-10 gap-4 md:gap-10 ">
-
           {/* Mapping over Products */}
           {products.map((product) => (
-            <Link to={`/product/${product.id}`}
+            <Link
+              to={`/product/${product.id}`}
               className="flex flex-col rounded-md shadow-md cursor-pointer border-2 p-2 w-full flex-1 h-full transform  transition-transform duration-300 hover:scale-105"
               key={product.id}
             >
@@ -40,7 +36,9 @@ function ShopCard({user}) {
                   alt=""
                 />
               </div>
-              <h3 className="mt-1 md:text-xl text-lg font-medium">{product.name}</h3>
+              <h3 className="mt-1 md:text-xl text-lg font-medium">
+                {product.name}
+              </h3>
               <p className="mt-1 text-md md:text-lg ">$ {product.price}</p>
               <div className="flex justify-between items-center relative  mt-2">
                 <div className="flex md:gap-1 mt-2">
@@ -49,7 +47,10 @@ function ShopCard({user}) {
                   <RiStarSFill size={22} className="text-orange-500" />
                   <RiStarSFill size={22} className="text-orange-500" />
                 </div>
-                <div onClick={(e)=> handleAddToCart(e,product)}  className="bg-red-700 absolue flex items-center hover:w-28 justify-center group md:w-8 w-7 h-7 md:h-8 text-sm p-2 text-white rounded-full  transition-all duration-100 hover:scale-105">
+                <div
+                  onClick={(e) => handleAddToCart(e, product)}
+                  className="bg-red-700 absolue flex items-center hover:w-28 justify-center group md:w-8 w-7 h-7 md:h-8 text-sm p-2 text-white rounded-full  transition-all duration-100 hover:scale-105"
+                >
                   <span className="group-hover:hidden block">+</span>
                   <span className="hidden group-hover:block">Add to Cart</span>
                 </div>

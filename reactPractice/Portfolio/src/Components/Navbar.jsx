@@ -16,7 +16,7 @@ function Navbar() {
     },
     {
       id: 3,
-      text: "PortFolio",
+      text: "Projects",
     },
     {
       id: 4,
@@ -28,7 +28,7 @@ function Navbar() {
     },
   ];
   return (
-    <div className="h-full py-2 shadow-md w-full flex md:flex-row flex-col items-center justify-between md:px-10">
+    <div className="h-24 py-2 fixed top-0 left-0 z-50 bg-white shadow-md w-full flex md:flex-row flex-col items-center justify-between md:px-10">
       <div className="flex  items-center gap-4 pb-3 md:pb-0 md:gap-2 ">
         <div>
           <img className="md:h-16 h-10 w-12 md:w-20 rounded-full" src={coder} alt="" />
