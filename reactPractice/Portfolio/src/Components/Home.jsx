@@ -7,11 +7,11 @@ import coder from "../assets/Coder.png";
 
 function Home() {
   return (
-    <div className="flex h-full shadow-sm w-full gap-4 py-10 items-center px-20">
-      <div className="w-[50%] flex flex-col gap-10  mt-20">
+    <div name="Home" className="md:flex h-full shadow-sm w-full gap-4 py-10 md:items-center px-4 md:px-20">
+      <div className="md:w-[50%] flex flex-col gap-10  mt-24 md:mt-40">
         <div>
-          <p className="text-2xl font-normal">Welcome In My Feed</p>
-          <h1 className="text-5xl mt-3 font-medium">
+          <p className="md:text-2x  h-full text-md font-normal">Welcome In My Feed</p>
+          <h1 className="md:text-5xl text-3xl w-[48%] mt-3 font-medium">
             Hello, I'm a{" "}
             <ReactTyped
               className="text-red-600"
@@ -22,7 +22,7 @@ function Home() {
             />
           </h1>
         </div>
-        <p className="text-lg font-medium text-justify">
+        <p className="md:text-lg text-md md:mt-6 font-medium md:text-justify">
           Seeking a frontend developer role in a dynamic and innovative
           environment where I can leverage my expertise in React JS, JavaScript,
           and frontend technologies to craft exceptional user experiences and
@@ -50,9 +50,9 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="w-[50%]">
+      <div className="md:w-[50%]">
         <div>
-          <img className="h-96 rounded-full ml-32" src={coder} alt="" />
+          <img className="md:h-96 h-72 rounded-full md:ml-32" src={coder} alt="" />
         </div>
       </div>
     </div>
