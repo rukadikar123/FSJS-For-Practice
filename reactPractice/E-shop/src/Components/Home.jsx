@@ -65,7 +65,7 @@ function Home({data,categories}) {
     <InfoSection/>
     <CategoriesSection/>
     <div className="md:mx-20 mx-4">
-        <h1 className="text-center font-semibold text-2xl py-8 ">
+        <h1 className="text-center font-semibold text-5xl py-8 ">
           Our Products
         </h1>
         <ProductCard products={data} />

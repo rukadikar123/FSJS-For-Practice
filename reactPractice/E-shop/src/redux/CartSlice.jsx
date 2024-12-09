@@ -24,6 +24,7 @@ const CartSlice = createSlice({
           quantity: 1,
           totalPrice: newProduct.price,
         });
+        alert("product successfully added to cart")
       }
       state.totalPrice += newProduct.price;
       state.totalQuantity++;
@@ -67,10 +68,13 @@ const CartSlice = createSlice({
         );
       }
     },
+        removeAllCartItems(state){
+            state.products=[]
+        }
   },
 });
 
-export const { addToCart, decreaseQuantity, increaseQuantity, removeFromCart } =
+export const { addToCart, decreaseQuantity, increaseQuantity, removeFromCart, removeAllCartItems } =
   CartSlice.actions;
 
 export default CartSlice.reducer;

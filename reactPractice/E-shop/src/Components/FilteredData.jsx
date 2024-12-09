@@ -5,20 +5,22 @@ import { addToCart } from '../redux/CartSlice'
 
 function FilteredData() {
 
-    const products=useSelector(state=> state.products.filteredData)
+    const products=useSelector(state=> state.products.filteredData)    // Retrieve filteredData state from ProductSlice using Redux Toolkit's useSelector
 
-    const dispatch=useDispatch()
+    const dispatch=useDispatch() 
 
   const handleAddToCart=(e,product)=>{
     e.stopPropagation()
     e.preventDefault()
-    dispatch(addToCart({...product}))
+    dispatch(addToCart({...product}))        // dispatching addToCart function
    
   }
     
   return (
     <>
        <div>{products.length>0 ? <div className="grid md:grid-cols-5 grid-cols-2 h-full mx-4 md:mx-10 my-10 gap-4 md:gap-10 ">
+
+        {/* mapping over products  */}
         {products.map((product) => (
           <div
             className="flex flex-col rounded-md shadow-md cursor-pointer border-2 p-2 w-full flex-1 h-full transform  transition-transform duration-300 hover:scale-105"
@@ -31,7 +33,7 @@ function FilteredData() {
                 alt=""
               />
             </div>
-            <h3 className="mt-1 text-xl font-medium">{product.name}</h3>
+            <h3 className="mt-1 text-xl line-clamp-2 font-medium">{product.title}</h3>
             <p className="mt-1">$ {product.price}</p>
             <div className="flex justify-between items-center relative  mt-2">
               <div className="flex gap-1 mt-2">

@@ -2,21 +2,22 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
-import About from "../../E-Commerce app/src/components/About";
+import About from "./Components/About";
 import ContactSection from "./Components/ContactSection";
-import ShopCard from "../../E-Commerce app/src/components/ShopCard";
+import ShopCard from "./Components/ShopCard";
 import Cart from "./Components/Cart";
 import Checkout from "./Components/Chechout";
-import Order from "../../E-Commerce app/src/components/Order";
+import Order from "./Components/Order";
 import FilteredData from "./Components/FilteredData";
 import ProductInfoCard from "./Components/ProductInfoCard";
 import { useEffect, useState } from "react";
 import { setProducts } from "./redux/ProductSlice";
 import { useDispatch } from "react-redux";
-import ProductCard from "./Components/ProductCard";
-
+import Register from "./Components/Register";
+import Login from "./Components/Login";
 function App() {
   const [order,setOrder]=useState(null)
+  const [user,setUser]=useState()
   const dispatch = useDispatch();
   const [data, setData] = useState();
   const [categories,setcategories]=useState()
@@ -34,7 +35,7 @@ function App() {
 
   const fetchData=async()=>{
     try{
-      const res=await fetch("https://fakestoreapi.in/api/products?limit=20")
+      const res=await fetch("https://fakestoreapi.in/api/products")
       const data=await res.json()
       setData(data.products)
       dispatch(setProducts(data.products))
@@ -54,15 +55,17 @@ function App() {
   return (
     <>
       <BrowserRouter>
-          <Navbar/>
+          <Navbar user={user} setUser={setUser}/>
         <Routes>
-        <Route path="/" exact element={<Home categories={categories} data={data} />} />
+        <Route path="/" exact element={<Home user={user} categories={categories} data={data} />} />
           <Route path="/about"  element={<About />} />
           <Route path="/contact"  element={<ContactSection />} />
-          <Route path="/shop" element={<ShopCard />} />
+          <Route path="/shop" element={<ShopCard  user={user}/>} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout  setOrder={setOrder}/>} />
           <Route path="/order-Confirmation" element={<Order  order={order}/>} />
+          <Route path="/login" element={<Login setUser={setUser}/>} />
+          <Route path="/register" element={<Register/>} />
           <Route path="/filtered-data" element={<FilteredData/>} />
           <Route path="/product/:id" element={<ProductInfoCard/>} />
         </Routes>

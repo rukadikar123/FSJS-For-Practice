@@ -23,18 +23,21 @@ function Checkout({setOrder}) {
 
   const handleOrder=()=>{
     const newOrder={
-      product:cart.products,
+      product:cart?.CartProducts,
       orderNumber:Math.floor(Math.random() * 90000) + 10000,
       shippingInformation:shippingInfo,
       totalPrice:cart.totalPrice
     }
     setOrder(newOrder)
+    
     navigate('/order-Confirmation')
+      
+    
 
   } 
 
   return (
-    <div className="flex md:flex-row flex-col mx-2  md:gap-10 px-4">
+    <div className="flex md:flex-row flex-col mx-2  md:gap-2 px-4">
       <div className="md:my-10 my-3 md:w-[62vw] w-full ml-6 h-full flex flex-col gap-4 md:gap-10">
         <h1 className="md:text-3xl text-xl font-medium">CHECKOUT</h1>
         <div className="flex flex-col gap-4 w-[96%] ">
@@ -110,8 +113,9 @@ function Checkout({setOrder}) {
                 <input
                   type="text"
                   placeholder="Enter Address "
-                  onChange={((e)=>setShippingInfo({...shippingInfo , address:e.target.value}))}
                   required
+                  onChange={((e)=>setShippingInfo({...shippingInfo , address:e.target.value}))}
+                  
                   className="border py-1 px-2 md:text-md text-sm rounded-sm outline-none"
                 />
               </div>
@@ -122,8 +126,9 @@ function Checkout({setOrder}) {
                 <input
                   type="email"
                   placeholder="Enter City Name"
-                  onChange={((e)=>setShippingInfo({...shippingInfo , City:e.target.value}))}
                   required
+                  onChange={((e)=>setShippingInfo({...shippingInfo , City:e.target.value}))}
+                  
                   className="border py-1 px-2 md:text-md text-sm rounded-sm outline-none"
                 />
               </div>
@@ -236,19 +241,19 @@ function Checkout({setOrder}) {
           </div>
         </div>
       </div>
-      <div className="md:mt-32 mt-10 w-full md:w-[25vw] h-full shadow-md border-2 p-4">
+      <div className="md:mt-32 mt-10 w-full md:w-[30vw] h-full shadow-md border-2 p-4">
       <h1 className="md:text-2xl text-xl mb-8 font-semibold">Order Summary</h1>
-        {cart.products.map((product) => (
-          <div className="flex my-4 flex-col gap-6" key={product.id}>
-            <div className="flex r justify-between">
-              <img className="md:h-24 h-20" src={product.image} alt="" />
+        {cart?.CartProducts?.map((product) => (
+          <div className="flex my-4 flex-col gap-6" key={product?.id}>
+            <div className="flex gap-6 justify-between">
+              <img className="md:h-24 h-20" src={product?.image} alt="" />
               <div className="mt-2">
-                <p className="font-medium md:text-lg text-md">{product.name}</p>
+                <p className="font-medium md:text-lg text-md mb-2 line-clamp-2">{product?.title}</p>
                 <p className="text-sm md:text-md">
-                  ${(product.price).toFixed(2)} x{product.quantity}
+                  ${(product?.price).toFixed(2)} x{product?.quantity}
                 </p>
               </div>
-              <p className="mt-2">${product.totalPrice}</p>
+              <p className="mt-2">${product?.totalPrice}</p>
             </div>
            
             

@@ -21,23 +21,23 @@ function ProductInfoCard() {
   }
 
   return (
-    <div className="md:my-10 my-2">
-      <div className="flex md:flex-row flex-col justify-center items-center gap-10 md:gap-40">
-        <div className="md:h-96 md:w-1/3 h-80 w-80 border-2 shadow-md p-10">
+    <div className="md:my-8  my-4">
+      <div className="flex md:flex-row mx-6 md:mx-20 flex-col justify-center items-center gap-10 md:gap-20">
+        <div className="md:h-96 md:w-1/2 h-68 w-68 md:mx-0 mx-8 border-2 shadow-md p-3 md:p-4">
           <img className="h-full w-full" src={productItem?.image} alt="" />
         </div>
         <div className="flex flex-col gap-4">
-          <h1 className="text-5xl font-medium">{productItem?.name}</h1>
-          <p className="text-xl md:text-center">${productItem?.price}</p>
-          <button className="bg-red-600 text-white w-full text-lg px-2 py-1" onClick={handleAddToCart}>Add To Cart</button>
+          <h1 className="md:text-3xl text-xl font-medium">{productItem?.title}</h1>
+          <p className="text-xl font-semibold">${productItem?.price}</p>
+         <div> <button className="bg-red-600 text-white text-lg px-2 py-1" onClick={handleAddToCart}>Add To Cart</button></div>
           <p className="text-md flex items-center gap-2"><span><FaCarSide size={22}/></span>Delivery & Return</p>
           <p className="text-md flex items-center gap-2"><span><IoMdHelp size={20}/></span>Ask a Question</p>
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 mt-10 ml-8 md:ml-96">
-        <p className="md:text-4xl text-2xl">Product Description here</p>
-        <p className="md:text-xl text-[10px]">{productItem?.description}</p>
+      <div className="flex flex-col gap-4 mt-14 md:ml-8 mx-6 md:mx-10">
+        <p className="md:text-3xl font-semibold text-xl">{productItem?.title}</p>
+        <p className="md:text-lg text-[12px]">{productItem?.description}</p>
       </div>
     </div>
   );

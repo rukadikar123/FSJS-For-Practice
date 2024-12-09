@@ -15,7 +15,7 @@ function Order({ order }) {
       <div className="bg-slate-200 p-3 rounded-md flex flex-col gap-4">
         <div>
           <h1 className="md:text-lg text-md font-medium">Order Summary</h1>
-          <p>Order Number: {order.orderNumber}</p>
+          <p>Order Number: {order?.orderNumber}</p>
         </div>
         <div>
           <h1 className="md:text-lg text-md font-medium ">Shipping Information</h1>
@@ -26,10 +26,10 @@ function Order({ order }) {
         <div>
           <h1 className="md:text-lg text-md font-medium mb-2">Item Ordered</h1>
           <div>
-            {order.product.map((item) => (
+            {order?.product.map((item) => (
               <div className="flex justify-between mr-4" key={item.id}>
                 <p className="text-sm md:text-md ">
-                  {item.name} x{item.quantity}
+                  {item.title} x{item.quantity}
                 </p>
                 <p>${item.price * item.quantity}</p>
               </div>
