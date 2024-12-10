@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function Order({ order }) {
+function Order({ order, user }) {
   const navigate=useNavigate()
 
   return (
@@ -16,12 +16,13 @@ function Order({ order }) {
         <div>
           <h1 className="md:text-lg text-md font-medium">Order Summary</h1>
           <p>Order Number: {order?.orderNumber}</p>
+          <p>Email:{user}</p>
         </div>
         <div>
           <h1 className="md:text-lg text-md font-medium ">Shipping Information</h1>
-          <p>{order.shippingInformation.address}</p>
-          <p>{order.shippingInformation.City}</p>
-          <p>{order.shippingInformation.zip}</p>
+          <p>{order?.shippingInformation.address}</p>
+          <p>{order?.shippingInformation.City}</p>
+          <p>{order?.shippingInformation.zip}</p>
         </div>
         <div>
           <h1 className="md:text-lg text-md font-medium mb-2">Item Ordered</h1>

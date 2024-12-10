@@ -12,12 +12,13 @@ function Navbar({ user, setUser }) {
   const cart = useSelector((state) => state.cart?.CartProducts); // Retrieve product state from CartSlice using Redux Toolkit's useSelector
 
   const dispatch = useDispatch();
-
+  
   const handleSearch = (e) => {
     e.preventDefault();
     if (search) {
       dispatch(setSearchTerm(search)); //dispatching setSearchTerm function with value search
       navigate("/filtered-data"); // navigating to filtered-data page
+      setSearch("")
     }
   };
 
@@ -70,7 +71,7 @@ function Navbar({ user, setUser }) {
                 <FaUser className="hidden md:block" size={26} />
               </span>
               <button
-                className="md:ml-4 ml-2 bg-red-600 md:text-xl text-xs px-2 md:px-4 py-1 text-white rounded-md cursor-pointer"
+                className="md:ml-4 ml-2 bg-red-600 md:text-lg text-xs px-2 md:px-4 py-1 text-white rounded-md cursor-pointer"
                 onClick={handleLogOut}
               >
                 Log Out

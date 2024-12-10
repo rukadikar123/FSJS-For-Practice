@@ -15,6 +15,7 @@ import { setProducts } from "./redux/ProductSlice";
 import { useDispatch } from "react-redux";
 import Register from "./Components/Register";
 import Login from "./Components/Login";
+import ShopByCategories from "./Components/ShopByCategories";
 function App() {
   const [order,setOrder]=useState(null)
   const [user,setUser]=useState()
@@ -35,9 +36,13 @@ function App() {
 
   const fetchData=async()=>{
     try{
-      const res=await fetch("https://fakestoreapi.in/api/products")
+      const res=await fetch("https://fakestoreapi.in/api/products?limit=150")
       const data=await res.json()
+      console.log(data);
+      
       setData(data.products)
+      console.log(data.products);
+      
       dispatch(setProducts(data.products))
     }catch(err){
       console.log(err);
@@ -63,11 +68,12 @@ function App() {
           <Route path="/shop" element={<ShopCard  user={user}/>} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout  setOrder={setOrder}/>} />
-          <Route path="/order-Confirmation" element={<Order  order={order}/>} />
+          <Route path="/order-Confirmation" element={<Order user={user} order={order}/>} />
           <Route path="/login" element={<Login setUser={setUser}/>} />
           <Route path="/register" element={<Register/>} />
           <Route path="/filtered-data" element={<FilteredData/>} />
           <Route path="/product/:id" element={<ProductInfoCard/>} />
+          <Route path="/category/:type" element={<ShopByCategories categories={categories}/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

@@ -19,6 +19,8 @@ function Login({setUser}) {
       setUser(res.user.email)    // Update the user state with the signed-in user's email
       navigate('/')
       
+      
+      
     })
     .catch(err=> console.log(err)  // Handle sign-in errors
     )
