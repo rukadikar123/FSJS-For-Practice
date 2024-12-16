@@ -1,0 +1,8 @@
+.navbar {
+    transition: height 0.3s ease-in-out;
+  }
+  
+  .shrink-logo {
+    transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+  }
+ 
