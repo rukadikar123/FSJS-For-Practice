@@ -4,38 +4,302 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-   <header>
-    <nav id="navbar" class="navbar bg-gray-200 items-center px-8 justify-between flex py-4 fixed top-0 left-0 w-full">
-        <div>
-          <img id="logo" class="h-20 w-20 shrink-logo"
+    <header>
+      <nav
+        id="navbar" 
+        class="navbar bg-white items-center px-8 justify-between md:flex py-4  fixed top-0 left-0 w-full"
+      >
+        <div class=" flex items-center gap-56">
+          <img
+            id="logo"
+            class="h-20 w-28 shrink-logo"
             src="https://biobiz.in/wp-content/uploads/2023/12/biobiz-logo.png"
             alt=""
           />
+          <i onclick="toggleMenu()" class="menu fa-solid fa-bars  md:hidden"></i>
         </div>
+        
         <div>
-          <ul class="flex text-[17px] text-gray-700 font-medium  items-center justify-between gap-10">
-            <li class="hover:text-gray-400 cursor-pointer"><a href="#">Home</a></li>
-            <li class="hover:text-gray-400 cursor-pointer"><a href="#">About</a></li>
-            <li class="hover:text-gray-400 cursor-pointer"><a href="#">India updates</a></li>
-            <li class="hover:text-gray-400 cursor-pointer"><a href="#">Opportunities</a></li>
-            <li class="hover:text-gray-400 cursor-pointer"><a href="#">BioBiz Consultings</a></li>
-            <li class="hover:text-gray-400 cursor-pointer"><a href="#">Innovation Insights</a></li>
-            <li class="hover:text-gray-400 cursor-pointer"><a href="#">Insights</a></li>
-            <li class="hover:text-gray-400 cursor-pointer"><a href="#">BRING</a></li>
-            <li class="hover:text-gray-400 cursor-pointer"><a href="#">Contact</a></li>
+          <ul id="menu-list"
+            class=" md:flex hidden text-[17px]  text-gray-700 font-medium items-center justify-between gap-10"
+          >
+            <li class="hover:text-gray-400 cursor-pointer">
+              <a href="#" >Home</a>
+            </li>
+            <li class="hover:text-gray-400 cursor-pointer">
+              <a href="#">About</a>
+            </li>
+            <li class="hover:text-gray-400 cursor-pointer">
+              <a href="#">India updates</a>
+            </li>
+            <li class="hover:text-gray-400 cursor-pointer">
+              <a href="#">Opportunities</a>
+            </li>
+            <li class="hover:text-gray-400 cursor-pointer">
+              <a href="#">BioBiz Consultings</a>
+            </li>
+            <li class="hover:text-gray-400 cursor-pointer">
+              <a href="#">Innovation Insights</a>
+            </li>
+            <li class="hover:text-gray-400 cursor-pointer">
+              <a href="#">Insights</a>
+            </li>
+            <li class="hover:text-gray-400 cursor-pointer">
+              <a href="#">BRING</a>
+            </li>
+            <li class="hover:text-gray-400 cursor-pointer">
+              <a href="#">Contact</a>
+            </li>
           </ul>
         </div>
       </nav>
-   </header>
-   <main class="h-[110vh]">
+    </header>
+    <div class="z-20 fixed left-2 top-64">
+      <ul>
+        <li>
+          <i
+            class="fa-brands cursor-pointer fa-facebook-f mb-2  text-blue-500 text-2xl"
+          ></i>
+        </li>
+        <li>
+          <i
+            class="fa-brands cursor-pointer fa-instagram  mb-2 text-red-600 text-2xl"
+          ></i>
+        </li>
+        <li>
+          <i
+            class="fa-brands cursor-pointer fa-twitter mb-2 text-blue-300 text-2xl"
+          ></i>
+        </li>
+        <li>
+          <i
+            class="fa-brands cursor-pointer fa-linkedin-in mb-2 text-[#007bb5] text-2xl"
+          ></i>
+        </li>
+      </ul>
+    </div>
 
-   </main>
+    <section>
+      <div class="mt-24">
+        <video
+          class="md:h-[72vh] h-[25vh] w-full  object-cover"
+          src="./assets/video.mp4 "
+          muted
+          autoplay
+          loop
+        ></video>
+      </div>
+    </section>
+    <section class="h-full md:w-full md:flex gap-4 md:gap-32 pl-12 pr-4 md:px-40 bg-[#d6d6d6] py-6 md:py-20">
+      <div class="left md:w-[60%]">
+        <p class="text-xl font-medium">
+          At BioBiz, we are keen to capitalize on India’s rich biodiversity and
+          the availability of large amounts of biomass residues to develop a
+          sustainable bio-economy and attractive business opportunities for
+          diverse stakeholders – farmers, rural stakeholders, end-use
+          industries, entrepreneurs / startups, and financial investors.
+        </p>
+        <p class="text-xl mt-6 font-medium">
+          As part of a leading climate tech consulting firm, we will provide
+          critical assistance with market intelligence, data-driven analyses,
+          professional networking, and opportunities for relevant stakeholders
+          to get effective visibility.
+        </p>
+        <h1 class="text-center text-4xl font-bold mt-6">Main Sections</h1>
+        <div class="md:flex items-center justify-between mt-12 mx-10">
+          <div class="flex flex-col items-center gap-6">
+            <div><img
+              class="mt-6 img opacity-0 transition-opacity duration-500 ease-in"
+              src="./assets/opportunity.png"
+              alt=""
+            /></div>
+            <p class="text-2xl font-medium cursor-pointer text-[#000080]">
+              Opportunities
+            </p>
+          </div>
+          <div class="flex flex-col items-center gap-6">
+           <div>
+            <img
+            class="mt-6 img opacity-0 transition-opacity duration-500 ease-in"
+            src="./assets/consulting.png"
+            alt=""
+          />
+           </div>
+            <p class="text-2xl font-medium cursor-pointer text-[#000080]">
+              Consulting
+            </p>
+          </div>
+          <div class="flex flex-col items-center gap-6">
+            <div><img
+              class="mt-6 img opacity-0 transition-opacity duration-500 ease-in"
+              src="./assets/insights.png"
+              alt=""
+            /></div>
+            <p class="text-2xl font-medium cursor-pointer text-[#000080]">
+              Insights
+            </p>
+          </div>
+        </div>
+        <div class="md:flex items-center justify-between gap-4 mt-10">
+          <div
+            class="flex flex-1 h-full flex-col items-center justify-center text-center gap-6"
+          >
+            <div>
+              <img
+                class="mt-6 img opacity-0 transition-opacity duration-500 ease-in"
+                src="./assets/innovations.png"
+                alt=""
+              />
+            </div>
+            <p class="text-2xl font-medium cursor-pointer text-[#000080]">
+              Innovation Insights
+            </p>
+          </div>
+          <div
+            class="flex h-full flex-1 flex-col items-center justify-center text-center gap-6"
+          >
+            <div>
+              <img
+                class="mt-6 img opacity-0 transition-opacity duration-500 ease-in"
+                src="./assets/leaf.png"
+                alt=""
+              />
+            </div>
+            <p
+              class="text-2xl font-medium w-[70%] leading-none cursor-pointer text-[#000080]"
+            >
+              Biomass Residue Intelligence
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="right md:w-[40%]  ">
+        <div class="bg-[#1fe089] px-4 md:px-8 h-[70vh] mt-6 md:mt-0 pb-10 md:mb-2 pb-6 md:w-[22vw]">
+          <h1 class="md:text-4xl text-xl text-[#12876f] text-center font-bold py-6">
+            INDIA UPDATES
+          </h1>
+          <ul
+            class="md:text-[16px] text-[14] uls h-[55vh] cursor-pointer overflow-y-auto flex flex-col gap-4 font-medium text-[#0b0000]"
+          >
+            <li><a href="#">Straw-Based Biogas Plant Commercialization</a></li>
+            <li><a href="#">Green Hydrogen: TKIL Partners with Sohhytec</a></li>
+            <li>
+              <a href="#"
+                >Biobutanol Production: Godavari Biorefineries Partners with
+                Catalyxx</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Compressed Biogas Plants Using Cow Dung in Uttar Pradesh</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Steelmaking with Green Hydrogen: SAIL and John Cockerill India
+                Collaborate</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Sustainable Aviation Fuel Facility: BPCL to Launch India’s
+                First by 2027</a
+              >
+            </li>
+            <li>
+              <a href="#">Green Hydrogen Solutions: NHPC Partners with GGGI</a>
+            </li>
+            <li>
+              <a href="#"
+                >India’s First Green Hydrogen Fuel Station Built by Amara Raja
+                Infra in Le</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Biochar Use in Steelmaking Explored as IIT (ISM) Dhanbad
+                Partners with sentra.world</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Green Hydrogen Plant in Baddi: Oil India and Himachal Pradesh
+                Power Corporation partner</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Bio-CNG Plants in 2 Cow Shelters by Greater Noida Authority</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Biofuel from Carbon Dioxide Developed by IIT Guwahati</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Waste Disposal Plant in Rudrapur to Generate Biogas</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >India’s First Cowshed with Integrated CBG Plant Opens in
+                Gwalior</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Ethanol Plant by Kisan Cooperative Sugar Mill in Pilibhit</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Biogas Plant to Be Revived by Faridabad Municipal
+                Corporation</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Biodiesel Deliveries: Aemetis India Completes $103 Million to
+                OMCs</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="relative">
+          <div  class="mt-2 md:absolute md:ml-0 ml-48 md:right-24">
+            <button id="div-button" class="button gap-2 flex px-5 py-2 text-xl border-[#12876f] border-2 transition-all duration-400 transform hover:scale-200">
+              View All
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="p-16 md:mt-0  bg-[#e06100]">
+      <h1 class="text-center text-xl md:text-4xl font-bold">Other Sections</h1>
+        <div class="flex flex-col mt-8 items-center justify-center gap-6 scale-up-center">
+          <div class="md:flex grid grid-cols-2 gap-4 md:gap-32 font-medium w-[75vw] text-white text-md md:text-xl">
+            <div><button class="bg-[#007fe0] px-6 py-2 shadow-xl">India Updates</button></div>
+            <div><button  class="bg-[#007fe0] px-6 py-2 shadow-xl">Weekly Updates</button></div>
+            <div><button class="bg-[#007fe0] px-6 py-2 shadow-xl">BRING</button></div>
+            <div><button class="bg-[#007fe0] px-6 py-2 shadow-xl">India Biomass Residues</button></div>
+          </div>
+          <p class="text-center text-white text-lg md:text-2xl font-medium mt-14">BioBiz is a division of Energy Alternatives India (EAI)</p>
+        </div>
+    </section>
+    <footer>
+      <p class="md:text-md text-sm text-center py-2 font-semibold">Copyright © 2024 BioBiz. All rights reserved.</p>
+    </footer>
 
-
-   <script src="./index.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>

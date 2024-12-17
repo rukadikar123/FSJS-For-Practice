@@ -6,3 +6,43 @@
     transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
   }
  
+  .uls::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+
+  .button {
+    transition: background-color 0.4s ease-in-out, border-color 0.4s ease-in-out;
+  }
+  
+  #div-button p {
+    margin-left: 5px;
+    transition: opacity 0.1s ease-in-out;
+  }
+ 
+  .scale-up-center {
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  
+  .scale-up-center.active {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  @keyframes scale-up-center {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  #menu-list.mobile-menu {
+    flex-direction: column;
+    align-items:center;
+    background-color: white;
+    height: 60vh;  
+    justify-content: center;
+  }
