@@ -86,10 +86,48 @@
 
 // reduce methd
 
-let arr=[1,2,3,4,5]
+// let arr=[1,2,3,4,5]
 
-let sum=arr.reduce((acc, curr)=>(
-    acc+curr
-),0)
+// const ind=arr.indexOf(0)
+// console.log(ind);
 
-console.log(sum);
+
+// let sum=arr.reduce((acc, curr)=>(
+//     acc+curr
+// ),0)
+
+// console.log(sum);
+  
+// const obj={
+//   Name:'siddharth',
+//   age:25
+// }
+
+// function bindMethod(msg){
+//     console.log(`${msg} ${this.Name} & ${this.age}`);
+    
+// // }
+// // const newObj=bindMethod.bind(obj,["hello"])
+// // newObj()
+
+// const person={
+//   Name:'siddharth',
+//   age:25,
+//   address:{
+//     city:"rukadi",
+//     country:"India"
+//   }
+// }
+
+// let copy=JSON.parse(JSON.stringify(person))
+
+// copy.address.city="kolhapur"
+
+// console.log(copy);
+// console.log(person);
+
+const mySet = new Set();
+console.log(mySet); // Set(0) {}
+
+const mySet2 = new Set(['s','i','d','d','s']);
+console.log(mySet2); // Set(3) { 1, 2, 3 }
