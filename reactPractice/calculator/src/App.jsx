@@ -9,7 +9,7 @@ function App() {
     try {
       setInput(eval(input))
     } catch (error) {
-      setInput("Error")
+      setInput("Error:",error)
     }
     
   }

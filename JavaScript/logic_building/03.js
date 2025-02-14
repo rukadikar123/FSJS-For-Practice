@@ -31,20 +31,22 @@
 // console.log(reversestring(12425));
 
 
-function createGreet(greet){
-    let count=0;
-    return function inner(Name){
-        count++;
-        console.log(`${greet} ${Name} and count is ${count}`);
+// function createGreet(greet){
+//     let count=0;
+//     return function inner(Name){
+//         count++;
+//         console.log(`${greet} ${Name} and count is ${count}`);
         
-    }
-}
+//     }
+// }
 
-const firstVar=createGreet("hi")
-const secondVar=createGreet("hello")
+// const firstVar=createGreet("hi")
+// const secondVar=createGreet("hello")
 
-firstVar("sid")
-firstVar("sid")
-firstVar("sid")
-secondVar("rahul")
-firstVar("sid")
+// firstVar("sid")
+// firstVar("sid")
+// firstVar("sid")
+// secondVar("rahul")
+// firstVar("sid")
+
+console.log(typeof NaN===12);
