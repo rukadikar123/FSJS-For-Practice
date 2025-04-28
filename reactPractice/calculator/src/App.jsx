@@ -7,7 +7,7 @@ function App() {
 
   const handleAnswer=()=>{
     try {
-      setInput(eval(input))
+      setInput(eval(input).toString())
     } catch (error) {
       setInput("Error:",error)
     }

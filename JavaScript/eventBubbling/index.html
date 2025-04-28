@@ -6,20 +6,30 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="container">
+    <!-- <div id="container">
       <button id="button">Click me!</button>
-    </div>
+    </div> -->
+    <ul id="list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
 
     <script>
-      document.getElementById("button").addEventListener("click", function () {
-        // console.log("Button clicked!");
-      });
+      // document.getElementById("button").addEventListener("click", function (e) {
+      //   e.stopPropagation()
+      //   console.log("Button clicked!");
+      // });
 
-      document
-        .getElementById("container")
-        .addEventListener("click", function () {
-          console.log("Container clicked!");
-        });
+      // document
+      //   .getElementById("container")
+      //   .addEventListener("click", function () {
+      //     console.log("Container clicked!");
+      //   });
+
+      document.getElementById('list').addEventListener('click', (e) => {
+        console.log('Clicked:', e.target.textContent);
+  });
     </script>
   </body>
 </html>

@@ -2,7 +2,7 @@ function MakeBubble() {
     var clutter=""
 
 for(var i=1; i<=207; i++){
-    var rn=Math.floor(Math.random()*10)
+    var rn=Math.floor(Math.random()*12)
     clutter+=`<div class="bubble w-[3vw] h-[6vh] flex items-center justify-center cursor-pointer text-white rounded-[50%] bg-green-900">${rn}</div>`
 }
 
@@ -23,7 +23,7 @@ function Timer(){
 }
 var Hit_rn=undefined;
 function getNewHit() {
-     Hit_rn=Math.floor(Math.random()*10)
+     Hit_rn=Math.floor(Math.random()*12)
     document.querySelector(".Hit").textContent=Hit_rn
 }
 
