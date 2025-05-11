@@ -104,9 +104,17 @@
 // Convert object to array of key-value pairs
 
 
-const obj = {
-    a:1, b:6
-};
+// const obj = {
+//     a:1, b:6
+// };
 
-const keyValuePairs = Object.entries(obj);
-console.log(keyValuePairs);
+// const keyValuePairs = Object.entries(obj);
+// console.log(keyValuePairs);
+
+
+function GlobalFunc(){
+    console.log(x);
+    var x=10
+}
+
+GlobalFunc()
