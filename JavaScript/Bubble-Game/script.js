@@ -16,7 +16,7 @@ function Timer(){
             timer--;
             document.querySelector(".Timer").textContent=timer
         }else{
-            clearInterval(timer)
+            clearInterval(time)
             document.querySelector(".pbtm").innerHTML=`<div class="flex items-center w-full justify-center">Game Over</div>`
         }
     },1000)
